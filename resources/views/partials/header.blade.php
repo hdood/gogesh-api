@@ -87,12 +87,15 @@
                 </div>
             </li>
             <li class="navbar-item dropdown header-message">
-                <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+
+                {{-- * TODO : uncomment this to have messages notifications   --}}
+
+                {{-- <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                     aria-expanded="false">
                     <i class="far fa-envelope"></i>
                     <div class="item-title d-md-none text-16 mg-l-10">Message</div>
                     <span id="count-message">{{ count($new_contacts) }}</span>
-                </a>
+                </a> --}}
 
                 <div
                     class="dropdown-menu @if (app()->getLocale() == 'ar') dropdown-menu-left @else dropdown-menu-right @endif">
