@@ -22,7 +22,7 @@ final class UserCommercialRegisterAction
         }
         $seller = $this->userRepository->create($array);
 
-        // $token = $seller->createToken("env('SECRETE')")->plainTextToken;
+        // $token = $seller->createToken("env('SECRET')")->plainTextToken;
 
         return ["data" => $seller];
     }

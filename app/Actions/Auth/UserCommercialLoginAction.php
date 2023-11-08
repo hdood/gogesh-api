@@ -24,7 +24,7 @@ class UserCommercialLoginAction
             $user->tokens()->delete();
             $user->fcm_token = $request->fcm_token;
             $user->save();
-            $token =  $user->createToken(env('SECRETE'))->plainTextToken;
+            $token =  $user->createToken(env('SECRET'))->plainTextToken;
             return [
                 "user" => new UserCommercialResource($user),
                 "token" => $token

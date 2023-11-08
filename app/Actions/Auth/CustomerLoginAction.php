@@ -21,7 +21,7 @@ class CustomerLoginAction
             $customer->tokens()->delete();
             $customer->fcm_token = $request->fcm_token;
             $customer->save();
-            $token =  $customer->createToken(env('SECRETE'))->plainTextToken;
+            $token =  $customer->createToken(env('SECRET'))->plainTextToken;
             return [
                 "user" => new CustomerResource($customer),
                 "token" => $token

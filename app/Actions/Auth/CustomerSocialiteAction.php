@@ -73,7 +73,7 @@ class CustomerSocialiteAction
 
         $customer->fcm_token = $request->fcm_token;
         $customer->save();
-        $token =  $customer->createToken(env('SECRETE'))->plainTextToken;
+        $token =  $customer->createToken(env('SECRET'))->plainTextToken;
         return [
             "customer"  => new CustomerResource($customer),
             "token" => $token

@@ -61,7 +61,7 @@ class SellerSocialiteAction
         }
         $seller->fcm_token = $request->fcm_token;
         $seller->save();
-        $token =  $seller->createToken(env('SECRETE'))->plainTextToken;
+        $token =  $seller->createToken(env('SECRET'))->plainTextToken;
         return ["seller" => new SellerResource($seller), "token" => $token];
     }
 

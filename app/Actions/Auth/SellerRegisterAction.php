@@ -52,7 +52,7 @@ final class SellerRegisterAction
         }
         // $this->sendEmailVerificationCodeAction->execute($seller->email);
 
-        $token = $seller->createToken("env('SECRETE')")->plainTextToken;
+        $token = $seller->createToken("env('SECRET')")->plainTextToken;
 
         if (!$seller->hasVerifiedEmail()) {
             $seller->markEmailAsVerified();

@@ -25,7 +25,7 @@ class CustomerRegisterAction
 
         $customer = $this->customerRepository->create($array);
 
-        $token =  $customer->createToken(env('SECRETE'))->plainTextToken;
+        $token =  $customer->createToken(env('SECRET'))->plainTextToken;
 
         if (!$customer->hasVerifiedEmail()) {
             $customer->markEmailAsVerified();
