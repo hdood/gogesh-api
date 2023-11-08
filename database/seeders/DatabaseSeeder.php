@@ -17,6 +17,8 @@ use App\Models\Speciality;
 use App\Models\DurationOffer;
 use App\Models\PlacesAds;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
 class DatabaseSeeder extends Seeder
@@ -27,13 +29,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(1)->create();
-        // DurationOffer::truncate();
-        // Season::truncate();
-        // Speciality::truncate();
-        // Day::truncate();
-        // Country::truncate();
-        // City::truncate();
-        // Region::truncate();
+        DurationOffer::truncate();
+        Season::truncate();
+        Speciality::truncate();
+        Day::truncate();
+        Country::truncate();
+        City::truncate();
+        Region::truncate();
         // Offer::factory(10)->create();
         // Ads::factory(10)->create();
 
@@ -41,13 +43,13 @@ class DatabaseSeeder extends Seeder
         // Season::factory(10)->create();
         // Speciality::factory(10)->create();
         // Sector::factory(10)->create();
-        // $places = ['Home_Baner', 'Home_Flash', 'Sectors_Baner', 'Ads_Screen', 'Search_Baner', 'Sector_Flash', 'Sector_Baner', 'Notification'];
-        // foreach ($places as $key => $place) {
-        //     PlacesAds::create([
-        //         "place" => $place,
-        //         "price" => 3,
-        //     ]);
-        // }
+        $places = ['Home_Baner', 'Home_Flash', 'Sectors_Baner', 'Ads_Screen', 'Search_Baner', 'Sector_Flash', 'Sector_Baner', 'Notification'];
+        foreach ($places as $key => $place) {
+            PlacesAds::create([
+                "place" => $place,
+                "price" => 3,
+            ]);
+        }
         // Day::create([
         //     "name_ar" => "السبت",
         //     "name_en" => "Saturday",
@@ -83,135 +85,94 @@ class DatabaseSeeder extends Seeder
 
         // // countries
 
-        // $algeria =  Country::create([
-        //     "name_ar" => "الجزائر",
-        //     "name_en" => "Algeria",
-        // ]);
-        // $tunisia = Country::create([
-        //     "name_ar" => "تونس",
-        //     "name_en" => "Tunisia",
-        // ]);
-        // $libya = Country::create([
-        //     "name_ar" => "ليبا",
-        //     "name_en" => "Libya",
-        // ]);
-        // $egypt = Country::create([
-        //     "name_ar" => "مصر",
-        //     "name_en" => "Egypt",
-        // ]);
-
-        // // region
-
-        // $eloued = City::create(
-        //     [
-        //         "name_ar" => "الوادي",
-        //         "name_en" => "Eloued",
-        //         "country_id" => $algeria->id
-        //     ]
-        // );
-
-        // $biskira = City::create(
-        //     [
-        //         "name_ar" => "بسكرة",
-        //         "name_en" => "Biskira",
-        //         "country_id" => $algeria->id
-        //     ]
-        // );
-
-        // $cairo = City::create(
-        //     [
-        //         "name_ar" => "القاهرة",
-        //         "name_en" => "Cairo",
-        //         "country_id" => $egypt->id
-        //     ]
-        // );
-
-
-
-
-        // // // city
-
-        // $rabah = Region::create(
-        //     [
-        //         "name_ar" => "الرباح",
-        //         "name_en" => "Rabah",
-        //         "city_id" => $eloued->id
-        //     ]
-        // );
+    
 
 
 
 
 
-        // User::factory(2)->create();
+
+        $admin = User::factory()->create([
+            "name"=> "test",
+            "email" => "mahdi@test.com", 
+            "password" => Hash::make("password")
+        ]);
 
         // Permissions
-        // $permissions = [
-        //     'offer-list',
-        //     'offer-create',
-        //     'offer-edit',
-        //     'offer-delete',
+        $permissions = [
+            'offer-list',
+            'offer-create',
+            'offer-edit',
+            'offer-delete',
 
-        //     'reason-list',
-        //     'reason-create',
-        //     'reason-edit',
-        //     'reason-delete',
+            'reason-list',
+            'reason-create',
+            'reason-edit',
+            'reason-delete',
 
-        //     'duration-list',
-        //     'duration-create',
-        //     'duration-edit',
-        //     'duration-delete',
+            'duration-list',
+            'duration-create',
+            'duration-edit',
+            'duration-delete',
 
-        //     'ads-list',
-        //     'ads-create',
-        //     'ads-edit',
-        //     'ads-delete',
+            'ads-list',
+            'ads-create',
+            'ads-edit',
+            'ads-delete',
 
-        //     'location-list',
-        //     'location-create',
-        //     'location-edit',
-        //     'location-delete',
+            'location-list',
+            'location-create',
+            'location-edit',
+            'location-delete',
 
-        //     'category-list',
-        //     'category-create',
-        //     'category-edit',
-        //     'category-delete',
+            'category-list',
+            'category-create',
+            'category-edit',
+            'category-delete',
 
-        //     'customer-list',
-        //     'customer-create',
-        //     'customer-edit',
-        //     'customer-delete',
+            'customer-list',
+            'customer-create',
+            'customer-edit',
+            'customer-delete',
 
-        //     'seller-list',
-        //     'seller-create',
-        //     'seller-edit',
-        //     'seller-delete',
+            'seller-list',
+            'seller-create',
+            'seller-edit',
+            'seller-delete',
 
-        //     'company-list',
-        //     'company-create',
-        //     'company-edit',
-        //     'company-delete',
+            'company-list',
+            'company-create',
+            'company-edit',
+            'company-delete',
 
-        //     'package-list',
-        //     'package-create',
-        //     'package-edit',
-        //     'package-delete',
+            'package-list',
+            'package-create',
+            'package-edit',
+            'package-delete',
 
-        //     'user-list',
-        //     'user-create',
-        //     'user-edit',
-        //     'user-delete',
+            'user-list',
+            'user-create',
+            'user-edit',
+            'user-delete',
 
-        //     'role-list',
-        //     'role-create',
-        //     'role-edit',
-        //     'role-delete',
+            'role-list',
+            'role-create',
+            'role-edit',
+            'role-delete',
 
-        // ];
+        ];
 
-        // foreach ($permissions as $permission) {
-        //     Permission::create(['name' => $permission]);
-        // }
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
+        }
+
+        $role = Role::create([
+            "name" => "Super Admin"
+        ]);
+
+        $role->syncPermissions($permissions); 
+
+        $admin->assignRole($role);
 
         $this->call(CountrySeeder::class);
         $this->call(CitySeeder::class);

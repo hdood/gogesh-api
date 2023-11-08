@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name_ar');
             $table->string('name_en');
             $table->foreignId("city_id")->constrained("cities")->cascadeOnDelete()->cascadeOnUpdate();
-            $table->enum('status', ['Active', 'Inactive']);
+            $table->enum('status', ['Active', 'Inactive'])->default("Active");
 
             $table->timestamps();
         });
