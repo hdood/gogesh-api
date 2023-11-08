@@ -29,13 +29,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(1)->create();
-        DurationOffer::truncate();
-        Season::truncate();
-        Speciality::truncate();
-        Day::truncate();
-        Country::truncate();
-        City::truncate();
-        Region::truncate();
+        // DurationOffer::truncate();
+        // Season::truncate();
+        // Speciality::truncate();
+        // Day::truncate();
+        // Country::truncate();
+        // City::truncate();
+        // Region::truncate();
         // Offer::factory(10)->create();
         // Ads::factory(10)->create();
 
