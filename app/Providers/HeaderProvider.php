@@ -25,9 +25,9 @@ class HeaderProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // $contacts = Support::whereHas('messages', function ($q) {
-        //     $q->whereNot('type', User::class)->where('status', EnumGeneral::UNREAD);
-        // })->orderBy('created_at', 'desc')->get();
-        // View::share('new_contacts', $contacts);
+        $contacts = Support::whereHas('messages', function ($q) {
+            $q->whereNot('type', User::class)->where('status', EnumGeneral::UNREAD);
+        })->orderBy('created_at', 'desc')->get();
+        View::share('new_contacts', $contacts);
     }
 }
