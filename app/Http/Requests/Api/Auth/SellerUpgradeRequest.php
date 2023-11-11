@@ -32,10 +32,10 @@ class SellerUpgradeRequest extends ApiFormRequest
             "work_days.*.from" => "required|string",
             "work_days.*.to" => "required|string",
 
-            'social_accounts' => 'required|array',
-            'social_accounts.*.name' => 'required|string',
-            'social_accounts.*.url' => 'required|string',
-            'social_accounts.*.type' => 'required|string',
+            // 'social_accounts' => 'required|array',
+            // 'social_accounts.*.name' => 'required|string',
+            // 'social_accounts.*.url' => 'required|string',
+            // 'social_accounts.*.type' => 'required|string',
             'delivery_price' => 'nullable|numeric'
         ];
     }

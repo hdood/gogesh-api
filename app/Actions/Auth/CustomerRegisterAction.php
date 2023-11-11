@@ -19,7 +19,7 @@ class CustomerRegisterAction
         $array = $request->validated();
 
         if ($request->hasFile('image')) {
-            data_set($array, "image", saveImage("profile", $request->image));
+            data_set($array, "image", saveImage("profile", $request->imagwe));
         }
         $array['completed'] = 1;
 
