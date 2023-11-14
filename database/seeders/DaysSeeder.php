@@ -18,10 +18,6 @@ class DaysSeeder extends Seeder
             "name_en" => "Saturday",
         ]);
         Day::create([
-            "name_ar" => "السبت",
-            "name_en" => "Saturday",
-        ]);
-        Day::create([
             "name_ar" => "الاحد",
             "name_en" => "Sunday",
         ]);
