@@ -36,6 +36,7 @@ class SellerUpgradeRequest extends ApiFormRequest
             // 'social_accounts.*.name' => 'required|string',
             // 'social_accounts.*.url' => 'required|string',
             // 'social_accounts.*.type' => 'required|string',
+            
             'delivery_price' => 'nullable|numeric'
         ];
     }

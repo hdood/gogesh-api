@@ -50,38 +50,7 @@ class DatabaseSeeder extends Seeder
                 "price" => 3,
             ]);
         }
-        // Day::create([
-        //     "name_ar" => "السبت",
-        //     "name_en" => "Saturday",
-        // ]);
-        // Day::create([
-        //     "name_ar" => "السبت",
-        //     "name_en" => "Saturday",
-        // ]);
-        // Day::create([
-        //     "name_ar" => "الاحد",
-        //     "name_en" => "Sunday",
-        // ]);
-        // Day::create([
-        //     "name_ar" => "الاثنين",
-        //     "name_en" => "Monday",
-        // ]);
-        // Day::create([
-        //     "name_ar" => "الثلاثاء",
-        //     "name_en" => "Tuesday",
-        // ]);
-        // Day::create([
-        //     "name_ar" => "الاربعاء",
-        //     "name_en" => "Wednesday",
-        // ]);
-        // Day::create([
-        //     "name_ar" => "الخميس",
-        //     "name_en" => "Thursday",
-        // ]);
-        // Day::create([
-        //     "name_ar" => "الجمعة",
-        //     "name_en" => "Friday",
-        // ]);
+
 
         // // countries
 
