@@ -59,13 +59,19 @@ use App\Enum\EnumGeneral;
         </div>
         <div class="col-md-12 form-group">
             <label>{{ __('Social Accounts') }} *</label>
-            @forelse (json_decode($seller->social_accounts) as $item)
-                <a href="{{ $item->url }}" class="p-3"><img
-                        src="{{ asset('static/icons/social-icon') . '/' . $item->type . '.svg' }}"
-                        alt="{{ $item->url }}" /></a>
-            @empty
-            @endforelse
 
+            @if ($seller->social_accounts)
+                
+                @forelse (json_decode($seller->social_accounts) as $item)
+                <a href="{{ $item->url }}" class="p-3"><img
+                    src="{{ asset('static/icons/social-icon') . '/' . $item->type . '.svg' }}"
+                    alt="{{ $item->url }}" /></a>
+                @empty
+                @endforelse
+
+            @else 
+                User does not have any social accounts
+            @endif
         </div>
         <div class="col-md-6 form-group">
             <label>{{ __('delivery') }} *</label>
