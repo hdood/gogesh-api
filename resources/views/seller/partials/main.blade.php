@@ -273,6 +273,9 @@ use App\Enum\EnumGeneral;
                 @enderror
             </div>
             <div class="col-md-4 form-group">
+
+                @if ($seller->subSector)
+
                 <label>{{ __('Sub Sector') }} *</label>
                 <select class="select2 select2-hidden-accessible" name="sub_sctor_id" id="sub_sector_id">
                     <option value="{{ $seller->subSector->id }}">
@@ -281,17 +284,26 @@ use App\Enum\EnumGeneral;
                 @error('sub_sctor_id')
                     <span class="text-red">{!! $message !!}</span>
                 @enderror
+
+                @else 
+                    Seller Does not have a sub sector
+                @endif
             </div>
             <div class="col-md-4 form-group">
-                <label>{{ __('Activity') }} *</label>
-                <select class="select2 select2-hidden-accessible" name="activity_id" id="activity_id">
-                    <option value="{{ $seller->activity->id }}" selected>
-                        {{ $seller->activity->getName() . ' # ' . $seller->activity->code }}
-                    </option>
-                </select>
-                @error('activity_id')
-                    <span class="text-red">{!! $message !!}</span>
-                @enderror
+
+                @if ($seller->activity)
+                    <label>{{ __('Activity') }}</label>
+                    <select class="select2 select2-hidden-accessible" name="activity_id" id="activity_id">
+                        <option value="{{ $seller->activity->id }}" selected>
+                            {{ $seller->activity->getName() . ' # ' . $seller->activity->code }}
+                        </option>
+                    </select>
+                    @error('activity_id')
+                        <span class="text-red">{!! $message !!}</span>
+                    @enderror
+                @else 
+                    User does not have an activity                    
+                @endif
             </div>
 
         </div>

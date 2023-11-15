@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
         // Season::factory(10)->create();
         // Speciality::factory(10)->create();
         // Sector::factory(10)->create();
+
         $places = ['Home_Baner', 'Home_Flash', 'Sectors_Baner', 'Ads_Screen', 'Search_Baner', 'Sector_Flash', 'Sector_Baner', 'Notification'];
         foreach ($places as $key => $place) {
             PlacesAds::create([
@@ -50,16 +51,6 @@ class DatabaseSeeder extends Seeder
                 "price" => 3,
             ]);
         }
-
-
-        // // countries
-
-    
-
-
-
-
-
 
         $admin = User::factory()->create([
             "name"=> "test",
@@ -148,5 +139,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RegionSeeder::class, false, ["country" => "saudi"]);
         $this->call(RegionSeeder::class, false, ["country" => "kuwait"]);
         $this->call(RegionSeeder::class, false, ["country" => "oman"]);
+        $this->call(DaysSeeder::class); 
+        
     }
 }
