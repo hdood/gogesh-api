@@ -24,8 +24,9 @@ final class SellerUpgradeAction
         if ($request->hasFile('logo')) {
             data_set($array, "logo", saveImage("logos", $request->logo));
         }
-
-        data_set($array, "social_accounts", json_encode($array["social_accounts"]));
+        if (array_key_exists("social_accounts", $array)) {
+            data_set($array, "social_accounts", json_encode($array["social_accounts"]));
+        }
         data_set($array, "work_days", json_encode($array["work_days"]));
         data_set($array, "upgraded_status", EnumGeneral::PENDING);
         data_set($array, "upgraded", 1);
