@@ -187,6 +187,8 @@ use App\Enum\EnumGeneral;
             <div class="col-12 py-3">
                 <h3>{{ __('Commercial Activity') }}:</h3>
             </div>
+
+
             <div class="col-md-4 form-group">
                 <label>{{ __('Commercial Activity Name') }} *</label>
                 <input type="text" name="commercial_activity_name" placeholder="" class="form-control"

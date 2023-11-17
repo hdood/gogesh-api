@@ -130,6 +130,7 @@ Route::middleware('localizationDashborad')->group(function () {
         //Seller
         Route::resource('seller', SellerController::class);
         Route::post('seller-more/{id}', [SellerController::class, 'updateMore'])->name('updateMore');
+        Route::put('seller/{id}', [SellerController::class, 'update'])->name('seller.update');
         Route::get('seller/accept-upgrade/{id}', [SellerController::class, 'approvedUpgrad'])->name('approvedUpgrad');
         Route::any('seller/updatePassword/{id}', [SellerController::class, 'updatePassword'])->name('seller.updatePassword');
         //commercial Activity

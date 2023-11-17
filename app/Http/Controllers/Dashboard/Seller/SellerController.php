@@ -23,6 +23,7 @@ use App\Repository\Dashboard\Categories\SectorRepository;
 use App\Repository\Dashboard\Categories\SpecialityRepository;
 use App\Repository\Dashboard\Services\SectionRepository;
 use App\Table\Seller\SellerTable;
+use Barryvdh\Debugbar\Facades\Debugbar;
 
 class SellerController extends Controller
 {
@@ -117,6 +118,9 @@ class SellerController extends Controller
         // Read and decode the JSON data
         $jsonContent = file_get_contents($jsonFilePath);
         $country_code = json_decode($jsonContent);
+
+        Debugbar::info("edit function was executed");
+
         return view('seller.action.edit', compact('seller', 'countries', 'services', 'seasons', 'specialities', 'sections', 'sectors', 'country_code'));
     }
 
@@ -133,7 +137,7 @@ class SellerController extends Controller
             $data['region'] = null;
         }
         $this->seller->update($id, $data);
-        return to_route('seller.index')->with('success', __('Succefully updated seller'));
+        return to_route('seller.edit', ['seller' => $id])->with('success', __('Succefully updated seller'));
     }
 
 
@@ -144,11 +148,15 @@ class SellerController extends Controller
         $seller->save();
         return to_route('seller.index');
     }
+
+
     // public function updateMore($id, SellerUpdateMoreRequest $request)
     // {
     //     return $request;
     //     $this->seller->update($id, $request->validated());
     // }
+
+
     /**
      * Update Password
      */

@@ -32,6 +32,7 @@
 
             <div class="table-responsive">
                 <div class="dataTables_wrapper no-footer">
+
                     <table class="table table-data table-sellers  display  text-nowrap dataTable no-footer" role="grid"
                         data-url="{{ route('seller.index') }}">
                         <thead>
