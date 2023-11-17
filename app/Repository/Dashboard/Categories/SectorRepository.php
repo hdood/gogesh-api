@@ -55,7 +55,7 @@ final class SectorRepository
         $query = $this->model->query();
         $query->where('status', EnumGeneral::ACTIVE);
         if ($type) {
-            $query->whereHas('commercialActivities', function ($query) use ($type) {
+            $query->whereHas('updateSellers', function ($query) use ($type) {
                 $query->where("status", EnumGeneral::APPROVED)->where('type', $type);
             });
         }
