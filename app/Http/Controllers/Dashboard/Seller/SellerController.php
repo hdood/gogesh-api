@@ -23,7 +23,7 @@ use App\Repository\Dashboard\Categories\SectorRepository;
 use App\Repository\Dashboard\Categories\SpecialityRepository;
 use App\Repository\Dashboard\Services\SectionRepository;
 use App\Table\Seller\SellerTable;
-use Barryvdh\Debugbar\Facades\Debugbar;
+// use Barryvdh\Debugbar\Facades\Debugbar;
 
 class SellerController extends Controller
 {
@@ -119,7 +119,7 @@ class SellerController extends Controller
         $jsonContent = file_get_contents($jsonFilePath);
         $country_code = json_decode($jsonContent);
 
-        Debugbar::info("edit function was executed");
+        // Debugbar::info("edit function was executed");
 
         return view('seller.action.edit', compact('seller', 'countries', 'services', 'seasons', 'specialities', 'sections', 'sectors', 'country_code'));
     }
