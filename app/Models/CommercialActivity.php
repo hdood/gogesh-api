@@ -17,7 +17,7 @@ class CommercialActivity extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    protected $table = "commercial_activity";
+    protected $table = "update_sellers";
     protected $fillable = [
         'name',
         'phone',

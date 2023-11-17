@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('user_commecrial_activities', function (Blueprint $table) {
+
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            
         });
     }
 
